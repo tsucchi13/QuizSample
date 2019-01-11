@@ -18,14 +18,17 @@ public class QuizScript : MonoBehaviour
         string[,] data = CSVManager.ReadCsvFile("QuizData/QuizData.csv");
         for (int i = 1; i < 6; i++)
         {
-            Quiz quiz = new Quiz(int.Parse(data[i, 0]), data[i, 1], data[i, 2], data[i, 3], data[i, 4], data[i, 5], data[i, 6]);
+            int id = int.Parse(data[i, 0]);
+            string question = data[i, 1];
+            string[] choices = new string[] { data[i, 2], data[i, 3], data[i, 4], data[i, 5] };
+            string answer = data[i, 6];
+            Quiz quiz = new Quiz(id, question, choices, answer);
             quizlist.Add(quiz);
         }
         question.text = quizlist[0].question;
-        choiceTexts[0].text = quizlist[0].slc1;
-        choiceTexts[1].text = quizlist[0].slc2;
-        choiceTexts[2].text = quizlist[0].slc3;
-        choiceTexts[3].text = quizlist[0].slc4;
+        for (int i = 0; i < choiceTexts.Length; i++){
+            choiceTexts[i].text = quizlist[0].choises[i];
+        }
     }
 
     void ButtonDealing()
@@ -40,10 +43,10 @@ public class QuizScript : MonoBehaviour
             return;
         }
         question.text = quizlist[q_count].question;
-        choiceTexts[0].text = quizlist[q_count].slc1;
-        choiceTexts[1].text = quizlist[q_count].slc2;
-        choiceTexts[2].text = quizlist[q_count].slc3;
-        choiceTexts[3].text = quizlist[q_count].slc4;
+        for (int i = 0; i < choiceTexts.Length; i++)
+        {
+            choiceTexts[i].text = quizlist[q_count].choises[i];
+        }
     }
 
     public void OnChoiceButtonDown(int i){
