@@ -10,10 +10,7 @@ public class QuizScript : MonoBehaviour
     List<string> answers = new List<string>();
     int q_count = 0;
     public Text question;
-    public Text slc1;
-    public Text slc2;
-    public Text slc3;
-    public Text slc4;
+    public Text[] choiceTexts;
 
 
     void Start()
@@ -25,10 +22,10 @@ public class QuizScript : MonoBehaviour
             quizlist.Add(quiz);
         }
         question.text = quizlist[0].question;
-        slc1.text = quizlist[0].slc1;
-        slc2.text = quizlist[0].slc2;
-        slc3.text = quizlist[0].slc3;
-        slc4.text = quizlist[0].slc4;
+        choiceTexts[0].text = quizlist[0].slc1;
+        choiceTexts[1].text = quizlist[0].slc2;
+        choiceTexts[2].text = quizlist[0].slc3;
+        choiceTexts[3].text = quizlist[0].slc4;
     }
 
     void buttonDealing()
@@ -43,30 +40,14 @@ public class QuizScript : MonoBehaviour
             return;
         }
         question.text = quizlist[q_count].question;
-        slc1.text = quizlist[q_count].slc1;
-        slc2.text = quizlist[q_count].slc2;
-        slc3.text = quizlist[q_count].slc3;
-        slc4.text = quizlist[q_count].slc4;
+        choiceTexts[0].text = quizlist[q_count].slc1;
+        choiceTexts[1].text = quizlist[q_count].slc2;
+        choiceTexts[2].text = quizlist[q_count].slc3;
+        choiceTexts[3].text = quizlist[q_count].slc4;
     }
 
-    public void slc1Button()
-    {
-        answers.Add(slc1.text);
-        buttonDealing();
-    }
-    public void slc2Button()
-    {
-        answers.Add(slc2.text);
-        buttonDealing();
-    }
-    public void slc3Button()
-    {
-        answers.Add(slc3.text);
-        buttonDealing();
-    }
-    public void slc4Button()
-    {
-        answers.Add(slc4.text);
+    public void OnChoiceButtonDown(int i){
+        answers.Add(choiceTexts[i].text);
         buttonDealing();
     }
 }
