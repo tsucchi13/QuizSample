@@ -28,7 +28,7 @@ public class QuizScript : MonoBehaviour
         choiceTexts[3].text = quizlist[0].slc4;
     }
 
-    void buttonDealing()
+    void ButtonDealing()
     {
         q_count += 1;
         if (quizlist.ToArray().Length == q_count)
@@ -48,6 +48,6 @@ public class QuizScript : MonoBehaviour
 
     public void OnChoiceButtonDown(int i){
         answers.Add(choiceTexts[i].text);
-        buttonDealing();
+        ButtonDealing();
     }
 }
