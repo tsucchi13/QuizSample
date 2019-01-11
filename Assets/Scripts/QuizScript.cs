@@ -8,7 +8,7 @@ public class QuizScript : MonoBehaviour
 
     List<Quiz> quizlist = new List<Quiz>();
     List<string> answers = new List<string>();
-    int q_count = 0;
+    int qCount = 0;
     public Text question;
     public Text[] choiceTexts;
 
@@ -33,19 +33,19 @@ public class QuizScript : MonoBehaviour
 
     void ButtonDealing()
     {
-        q_count += 1;
-        if (quizlist.ToArray().Length == q_count)
+        qCount += 1;
+        if (quizlist.ToArray().Length == qCount)
         {
-            for (int i =0; i < q_count; i++)
+            for (int i =0; i < qCount; i++)
             {
                 Debug.Log(answers[i]);
             }
             return;
         }
-        question.text = quizlist[q_count].question;
+        question.text = quizlist[qCount].question;
         for (int i = 0; i < choiceTexts.Length; i++)
         {
-            choiceTexts[i].text = quizlist[q_count].choises[i];
+            choiceTexts[i].text = quizlist[qCount].choises[i];
         }
     }
 
