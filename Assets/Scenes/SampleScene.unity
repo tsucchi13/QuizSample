@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 20139799}
   - component: {fileID: 20139798}
   m_Layer: 5
-  m_Name: selection1
+  m_Name: choice0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -189,8 +189,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1097955095}
-        m_MethodName: slc1Button
-        m_Mode: 1
+        m_MethodName: OnChoiceButtonDown
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -510,10 +510,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   question: {fileID: 1705106905}
-  slc1: {fileID: 20139799}
-  slc2: {fileID: 1774198551}
-  slc3: {fileID: 2138016034}
-  slc4: {fileID: 1930624148}
+  choiceTexts:
+  - {fileID: 20139799}
+  - {fileID: 1774198551}
+  - {fileID: 2138016034}
+  - {fileID: 1930624148}
 --- !u!4 &1097955096
 Transform:
   m_ObjectHideFlags: 0
@@ -676,7 +677,7 @@ GameObject:
   - component: {fileID: 1774198551}
   - component: {fileID: 1774198550}
   m_Layer: 5
-  m_Name: selection2
+  m_Name: choice1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -740,12 +741,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1097955095}
-        m_MethodName: slc2Button
-        m_Mode: 1
+        m_MethodName: OnChoiceButtonDown
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -804,7 +805,7 @@ GameObject:
   - component: {fileID: 1930624148}
   - component: {fileID: 1930624147}
   m_Layer: 5
-  m_Name: selection4
+  m_Name: choice3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -868,12 +869,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1097955095}
-        m_MethodName: slc4Button
-        m_Mode: 1
+        m_MethodName: OnChoiceButtonDown
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -932,7 +933,7 @@ GameObject:
   - component: {fileID: 2138016034}
   - component: {fileID: 2138016033}
   m_Layer: 5
-  m_Name: selection3
+  m_Name: choice2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -996,12 +997,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1097955095}
-        m_MethodName: slc3Button
-        m_Mode: 1
+        m_MethodName: OnChoiceButtonDown
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
