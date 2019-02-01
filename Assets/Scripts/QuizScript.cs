@@ -12,9 +12,15 @@ public class QuizScript : MonoBehaviour
 
     void Start()
     {
+        //ここでindex out of range出る → quizList入ってない、DataLoader読み込まれてない？
+        Invoke("Setting", 0.1f);
+    }
 
+    void Setting()
+    {
         question.text = DataManager.instance.quizList[0].question;
-        for (int i = 0; i < choiceTexts.Length; i++){
+        for (int i = 0; i < choiceTexts.Length; i++)
+        {
             choiceTexts[i].text = DataManager.instance.quizList[0].choises[i];
         }
     }
@@ -22,7 +28,7 @@ public class QuizScript : MonoBehaviour
     void ButtonDealing()
     {
         qCount += 1;
-        if (DataManager.instance.quizList.ToArray().Length == qCount)
+        if (DataManager.instance.quizList.ToArray().Length == qCount)//このif文はなんのため？
         {
             Result();
             return;
@@ -35,7 +41,8 @@ public class QuizScript : MonoBehaviour
     }
 
 
-    void Result() {
+    void Result()
+    {
         Destroy(question);
         for (int i = 0; i < choiceTexts.Length; i++)
         {
@@ -61,7 +68,8 @@ public class QuizScript : MonoBehaviour
     }
 
 
-    public void OnChoiceButtonDown(int i){
+    public void OnChoiceButtonDown(int i)
+    {
         selectedAnswers.Add(choiceTexts[i].text);
         ButtonDealing();
     }
